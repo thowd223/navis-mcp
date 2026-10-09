@@ -65,7 +65,6 @@ Source: "..\dist\2027\Resources\*.png"; DestDir: "{code:PluginDir|2027}\Resource
 [Icons]
 Name: "{group}\Report a bug"; Filename: "{app}\report-bug.bat"; WorkingDir: "{app}"
 Name: "{group}\AI Connect on GitHub"; Filename: "https://github.com/Surajprem7/navisworks-ai-connect"
-Name: "{group}\Check for updates"; Filename: "https://github.com/Surajprem7/navisworks-ai-connect/releases/latest"
 Name: "{group}\Uninstall AI Connect"; Filename: "{uninstallexe}"
 
 [Run]

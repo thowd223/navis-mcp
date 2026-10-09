@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (fork)
+- Removed the update check on Navisworks start (NavisBridge/Updater.cs), the `check_for_updates` MCP tool and the installer's "Check for updates" shortcut. No network calls to GitHub are made.
+- `get_model_info` returns `clashTestCount: null` instead of failing when Clash Detective is unavailable (Navisworks Simulate).
+
 ## 1.1.0
 - Update check on Navisworks start (once a day): asks before updating, verifies the installer SHA-256, installs when Navisworks closes. Optional "update automatically" setting; stronger reminder when a release is over 7 days old. Disable with environment variable AI_CONNECT_NO_UPDATE_CHECK=1.
 - Installer waits for Navisworks to close instead of failing; upgrades only the versions already installed.

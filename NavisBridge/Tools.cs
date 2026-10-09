@@ -60,8 +60,14 @@ namespace NavisBridge
                 ["models"] = models,
                 ["currentSelectionCount"] = d.CurrentSelection.SelectedItems.Count,
                 ["selectionSetCount"] = CountSaved(d.SelectionSets.Value),
-                ["clashTestCount"] = AllTests().Count
+                ["clashTestCount"] = ClashTestCountOrNull()
             };
+        }
+
+        // Navisworks Simulate has no Clash Detective, so don't let get_model_info fail there.
+        private static JToken ClashTestCountOrNull()
+        {
+            try { return AllTests().Count; } catch (Exception ex) { BridgePlugin.Log("clash unavailable: " + ex.Message); return JValue.CreateNull(); }
         }
 
         private static ModelItemCollection FindItems(JObject a, out Search search)
