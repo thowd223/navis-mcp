@@ -1,0 +1,7 @@
+bin/
+obj/
+*.log
+build-log.txt
+.vs/
+dist/
+installer/Output/
